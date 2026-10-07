@@ -85,7 +85,30 @@ except KeyboardInterrupt:
 finally:
     arduino.close()
 
+Step to do this program: 
 
+1. Connect DHT11 VCC to Arduino 5V.
+2. Connect DHT11 GND to Arduino GND.
+3. Connect DHT11 DATA to Arduino D2.
+4. Connect Arduino Uno to the Windows computer with the USB cable.
+5. Upload the Arduino sketch using the Arduino IDE.
+6. Close the Arduino IDE Serial Monitor.
+7. Open Command Prompt.
+8. Check Python is installed:
+   py --version
+9. Install the serial package:
+   py -m pip install pyserial
+10. Check the Arduino COM port in Arduino IDE: Tools > Port.
+11. Open the Python file and replace COM3 with your Arduino's COM port, if needed.
+12. In Command Prompt, go to the folder containing the Python file.
+    Example: cd %USERPROFILE%\Desktop
+13. Run the Python program:
+    py sensor_monitor.py
+14. Read the temperature and humidity output in Command Prompt.
+15. Press Ctrl+C to stop the program.
+
+
+11:52 PM
 
 // Connections to Arduino Uno:
 // DHT11 VCC  -> Arduino 5V
