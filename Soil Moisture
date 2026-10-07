@@ -1,0 +1,89 @@
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+
+#define SOIL_PIN A0
+
+#define SCREEN_WIDTH 128
+#define SCREEN_HEIGHT 64
+
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
+
+void setup() {
+  Serial.begin(9600);
+
+  // OLED start
+  if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
+    Serial.println("OLED Failed");
+    while (1);
+  }
+
+  display.clearDisplay();
+  display.setTextColor(SSD1306_WHITE);
+
+  display.setTextSize(1);
+  display.setCursor(20, 20);
+  display.println("Soil Moisture");
+  display.setCursor(30, 35);
+  display.println("Monitoring");
+
+  display.display();
+  delay(2000);
+}
+
+void loop() {
+
+  int sensorValue = analogRead(SOIL_PIN);
+
+  // Sensor calibration
+  // Dry = 1023, Wet = 300 approximately
+  int moisture = map(sensorValue, 1023, 300, 0, 100);
+
+  moisture = constrain(moisture, 0, 100);
+
+  Serial.print("Sensor Value: ");
+  Serial.print(sensorValue);
+  Serial.print(" | Moisture: ");
+  Serial.print(moisture);
+  Serial.println("%");
+
+  // OLED display
+  display.clearDisplay();
+
+  display.setTextSize(1);
+  display.setCursor(20, 0);
+  display.println("SOIL MOISTURE");
+
+  display.setTextSize(2);
+  display.setCursor(35, 20);
+  display.print(moisture);
+  display.println("%");
+
+  display.setTextSize(1);
+  display.setCursor(0, 50);
+
+  if (moisture < 30) {
+    display.println("Status: DRY");
+  }
+  else if (moisture < 70) {
+    display.println("Status: NORMAL");
+  }
+  else {
+    display.println("Status: WET");
+  }
+
+  display.display();
+
+  delay(1000);
+}
+
+
+// Connections to Arduino Uno:
+// OLED VCC -> Arduino 5V (or 3.3V if required by the OLED module)
+// OLED GND -> Arduino GND
+// OLED SDA -> Arduino A4
+// OLED SCL -> Arduino A5
+//
+// Soil moisture sensor VCC -> Arduino 5V (or 3.3V if required by the sensor)
+// Soil moisture sensor GND -> Arduino GND
+// Soil moisture sensor AO  -> Arduino A0
