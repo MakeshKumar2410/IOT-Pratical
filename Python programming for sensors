@@ -1,0 +1,98 @@
+#include <DHT.h>
+
+#define DHTPIN 2
+#define DHTTYPE DHT11
+
+DHT dht(DHTPIN, DHTTYPE);
+
+void setup() {
+  Serial.begin(9600);
+  dht.begin();
+}
+
+void loop() {
+  float humidity = dht.readHumidity();
+  float temperature = dht.readTemperature();
+
+  if (isnan(humidity) || isnan(temperature)) {
+    Serial.println("ERROR");
+  } else {
+    // Send temperature and humidity as comma-separated values
+    Serial.print(temperature);
+    Serial.print(",");
+    Serial.println(humidity);
+  }
+
+  delay(2000);
+}
+
+
+Python code 
+
+
+import serial
+
+# Change COM3 to the Arduino's port on your computer
+arduino = serial.Serial("COM3", 9600, timeout=2)
+
+temperature_readings = []
+humidity_readings = []
+temperature_threshold = 30
+
+print("Reading DHT11 data. Press Ctrl+C to stop.")
+
+try:
+    while True:
+        line = arduino.readline().decode("utf-8").strip()
+
+        if not line:
+            continue
+
+        if line == "ERROR":
+            print("Could not read the DHT11 sensor.")
+            continue
+
+        try:
+            temperature_text, humidity_text = line.split(",")
+            temperature = float(temperature_text)
+            humidity = float(humidity_text)
+        except ValueError:
+            continue
+
+        temperature_readings.append(temperature)
+        humidity_readings.append(humidity)
+
+        average_temperature = sum(temperature_readings) / len(temperature_readings)
+        average_humidity = sum(humidity_readings) / len(humidity_readings)
+
+        print("\nSensor Data Processing")
+        print("----------------------")
+        print("Temperature:", temperature, "°C")
+        print("Humidity:", humidity, "%")
+        print("Average Temperature:", round(average_temperature, 1), "°C")
+        print("Average Humidity:", round(average_humidity, 1), "%")
+        print("Minimum Temperature:", min(temperature_readings), "°C")
+        print("Maximum Temperature:", max(temperature_readings), "°C")
+
+        if temperature > temperature_threshold:
+            print("Warning: High Temperature")
+        else:
+            print("Status: Normal Temperature")
+
+except KeyboardInterrupt:
+    print("\nStopped reading sensor data.")
+
+finally:
+    arduino.close()
+
+
+
+// Connections to Arduino Uno:
+// DHT11 VCC  -> Arduino 5V
+// DHT11 GND  -> Arduino GND
+// DHT11 DATA -> Arduino D2
+//
+// Connect Arduino Uno to the computer using a USB cable.
+//
+// For a bare DHT11 sensor (not a module):
+// Connect a 10 kΩ resistor between DHT11 VCC and DHT11 DATA.
