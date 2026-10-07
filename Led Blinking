@@ -1,0 +1,34 @@
+int redLED = 8;
+int yellowLED = 9;
+int greenLED = 10;
+
+void setup() {
+  pinMode(redLED, OUTPUT);
+  pinMode(yellowLED, OUTPUT);
+  pinMode(greenLED, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(redLED, HIGH);
+  delay(1000);
+  digitalWrite(redLED, LOW);
+
+  digitalWrite(yellowLED, HIGH);
+  delay(1000);
+  digitalWrite(yellowLED, LOW);
+
+  digitalWrite(greenLED, HIGH);
+  delay(1000);
+  digitalWrite(greenLED, LOW);
+}
+
+
+// Connections to Arduino Uno:
+// Red LED anode (long leg) -> Arduino D8 through a 220 Ω resistor
+// Red LED cathode (short leg) -> Arduino GND
+//
+// Yellow LED anode (long leg) -> Arduino D9 through a 220 Ω resistor
+// Yellow LED cathode (short leg) -> Arduino GND
+//
+// Green LED anode (long leg) -> Arduino D10 through a 220 Ω resistor
+// Green LED cathode (short leg) -> Arduino GND
