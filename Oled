@@ -1,0 +1,96 @@
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+
+#define SCREEN_WIDTH 128
+#define SCREEN_HEIGHT 64
+
+#define OLED_RESET -1
+#define OLED_ADDR 0x3C
+
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
+
+void setup() {
+
+  // OLED start
+  if (!display.begin(SSD1306_SWITCHCAPVCC, OLED_ADDR)) {
+    while (1);
+  }
+
+  display.clearDisplay();
+
+  // Welcome screen
+  display.setTextColor(SSD1306_WHITE);
+  display.setTextSize(1);
+  display.setCursor(38, 8);
+  display.println("WELCOME");
+
+  display.setTextSize(2);
+  display.setCursor(15, 30);
+  display.println("HELLO");
+
+  display.display();
+  delay(1500);
+
+  display.clearDisplay();
+}
+
+void loop() {
+
+  // Moving "HELLO GUYS"
+  for (int x = 128; x >= -120; x -= 3) {
+
+    display.clearDisplay();
+
+    display.setTextColor(SSD1306_WHITE);
+    display.setTextSize(2);
+
+    display.setCursor(x, 25);
+    display.println("HELLO GUYS");
+
+    display.display();
+
+    delay(40);
+  }
+
+  // Center display
+  display.clearDisplay();
+
+  display.setTextSize(2);
+  display.setCursor(10, 15);
+  display.println("HELLO");
+
+  display.setCursor(22, 40);
+  display.println("GUYS!");
+
+  display.display();
+
+  delay(2000);
+
+  // Blink effect
+  for (int i = 0; i < 3; i++) {
+
+    display.clearDisplay();
+    display.display();
+    delay(300);
+
+    display.setTextSize(2);
+    display.setCursor(10, 15);
+    display.println("HELLO");
+
+    display.setCursor(22, 40);
+    display.println("GUYS!");
+
+    display.display();
+    delay(300);
+  }
+}
+
+
+
+
+// Connection for Arduino Uno:
+// OLED VCC -> 5V (or 3.3V if required by your OLED module)
+// OLED GND -> GND
+// OLED SDA -> A4
+// OLED SCL -> A5
