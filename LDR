@@ -1,0 +1,41 @@
+#define LDR_PIN A0
+#define LED_PIN 9
+
+int ldrValue;
+int threshold = 500;
+
+void setup() {
+  Serial.begin(9600);
+
+  pinMode(LED_PIN, OUTPUT);
+}
+
+void loop() {
+
+  ldrValue = analogRead(LDR_PIN);
+
+  Serial.print("LDR Value: ");
+  Serial.println(ldrValue);
+
+  // DARK
+  if (ldrValue < threshold) {
+    digitalWrite(LED_PIN, HIGH);
+    Serial.println("DARK - LED ON");
+  }
+
+  // BRIGHT
+  else {
+    digitalWrite(LED_PIN, LOW);
+    Serial.println("BRIGHT - LED OFF");
+  }
+
+  delay(500);
+}
+
+// Connections to Arduino Uno:
+// LDR module VCC -> Arduino 5V
+// LDR module GND -> Arduino GND
+// LDR module AO  -> Arduino A0
+//
+// LED anode (long leg) -> Arduino D9 through a 220 Ω resistor
+// LED cathode (short leg) -> Arduino GND
