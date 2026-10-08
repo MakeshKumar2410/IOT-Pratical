@@ -1,0 +1,346 @@
+Smart Building Architecture Diagram
+
+<mxfile host="app.diagrams.net" modified="2026-10-08T00:00:00.000Z" agent="ChatGPT" version="24.7.17">
+  <diagram id="smart-building" name="Smart Building Architecture">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- TITLE -->
+        <mxCell id="title" value="Smart Building Architecture Diagram"
+                style="text;html=1;strokeColor=none;fillColor=none;fontSize=22;fontStyle=1;align=center;verticalAlign=middle"
+                vertex="1" parent="1">
+          <mxGeometry x="390" y="30" width="400" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- LAYER BOXES -->
+
+        <!-- Perception Layer -->
+        <mxCell id="perception" value="Perception Layer&#xa;(Sensing Layer)"
+                style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=15;fontStyle=1"
+                vertex="1" parent="1">
+          <mxGeometry x="80" y="100" width="190" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- Network Layer -->
+        <mxCell id="network" value="Network Layer&#xa;(Communication Layer)"
+                style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=15;fontStyle=1"
+                vertex="1" parent="1">
+          <mxGeometry x="330" y="100" width="190" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- Processing Layer -->
+        <mxCell id="processing" value="Processing Layer&#xa;(Edge / Cloud Layer)"
+                style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=15;fontStyle=1"
+                vertex="1" parent="1">
+          <mxGeometry x="580" y="100" width="190" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- Application Layer -->
+        <mxCell id="application" value="Application Layer&#xa;(User Interface)"
+                style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=15;fontStyle=1"
+                vertex="1" parent="1">
+          <mxGeometry x="830" y="100" width="190" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- SENSOR BUS -->
+        <mxCell id="sensorbus"
+                style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2"
+                edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- SENSORS -->
+
+        <mxCell id="temp" value="Temperature / Humidity&#xa;Sensor"
+                style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=13"
+                vertex="1" parent="1">
+          <mxGeometry x="40" y="220" width="190" height="55" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="ldr" value="Light Sensor (LDR)"
+                style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=13"
+                vertex="1" parent="1">
+          <mxGeometry x="40" y="300" width="190" height="55" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="pir" value="PIR Motion Sensor"
+                style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=13"
+                vertex="1" parent="1">
+          <mxGeometry x="40" y="380" width="190" height="55" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="fire" value="Fire / Smoke Sensor"
+                style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=13"
+                vertex="1" parent="1">
+          <mxGeometry x="40" y="460" width="190" height="55" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="water" value="Water level / Leak&#xa;Sensor"
+                style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=13"
+                vertex="1" parent="1">
+          <mxGeometry x="40" y="540" width="190" height="55" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="door" value="Door / Window Sensor"
+                style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=13"
+                vertex="1" parent="1">
+          <mxGeometry x="40" y="620" width="190" height="55" as="geometry"/>
+        </mxCell>
+
+        <!-- IoT GATEWAY -->
+
+        <mxCell id="gateway" value="IoT Gateway&#xa;(ESP32 / NodeMCU)"
+                style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1"
+                vertex="1" parent="1">
+          <mxGeometry x="330" y="360" width="190" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- CLOUD SERVER -->
+
+        <mxCell id="cloud" value="Cloud Server&#xa;(IoT Platform)&#xa;&#xa;Data Storage&#xa;Data Processing&#xa;Analytics&#xa;Rules Engine&#xa;Alerts &amp; Notifications"
+                style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13"
+                vertex="1" parent="1">
+          <mxGeometry x="580" y="300" width="190" height="280" as="geometry"/>
+        </mxCell>
+
+        <!-- APPLICATIONS -->
+
+        <mxCell id="web" value="Web Development"
+                style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=13"
+                vertex="1" parent="1">
+          <mxGeometry x="830" y="220" width="190" height="55" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="mobile" value="Mobile App"
+                style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=13"
+                vertex="1" parent="1">
+          <mxGeometry x="830" y="310" width="190" height="55" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="email" value="Email / SMS Alert"
+                style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=13"
+                vertex="1" parent="1">
+          <mxGeometry x="830" y="400" width="190" height="55" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="admin" value="Building Administrator"
+                style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=13"
+                vertex="1" parent="1">
+          <mxGeometry x="830" y="490" width="190" height="55" as="geometry"/>
+        </mxCell>
+
+        <!-- LAYER CONNECTIONS -->
+
+        <mxCell id="layer1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block"
+                edge="1" parent="1" source="perception" target="network">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="layer2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block"
+                edge="1" parent="1" source="network" target="processing">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="layer3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block"
+                edge="1" parent="1" source="processing" target="application">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- SENSOR CONNECTIONS -->
+
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block"
+                edge="1" parent="1" source="temp" target="gateway">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block"
+                edge="1" parent="1" source="ldr" target="gateway">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block"
+                edge="1" parent="1" source="pir" target="gateway">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block"
+                edge="1" parent="1" source="fire" target="gateway">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block"
+                edge="1" parent="1" source="water" target="gateway">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block"
+                edge="1" parent="1" source="door" target="gateway">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- GATEWAY TO CLOUD -->
+
+        <mxCell id="gatewaycloud" value="Wi-Fi / Internet"
+                style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;labelBackgroundColor=#ffffff;fontSize=12"
+                edge="1" parent="1" source="gateway" target="cloud">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- CLOUD TO APPLICATIONS -->
+
+        <mxCell id="a1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block"
+                edge="1" parent="1" source="cloud" target="web">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="a2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block"
+                edge="1" parent="1" source="cloud" target="mobile">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="a3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block"
+                edge="1" parent="1" source="cloud" target="email">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="a4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block"
+                edge="1" parent="1" source="cloud" target="admin">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
+
+
+architecture flow
+
+
+<mxfile host="app.diagrams.net" modified="2026-10-08T00:00:00.000Z" agent="ChatGPT" version="24.7.17">
+  <diagram id="architecture-flow" name="Architecture Flow">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10"
+                  guides="1" tooltips="1" connect="1" arrows="1"
+                  fold="1" page="1" pageScale="1"
+                  pageWidth="1169" pageHeight="827"
+                  math="0" shadow="0">
+
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- TITLE -->
+        <mxCell id="title"
+                value="Architecture Flow"
+                style="text;html=1;strokeColor=none;fillColor=none;
+                       fontSize=22;fontStyle=1;
+                       align=center;verticalAlign=middle"
+                vertex="1" parent="1">
+          <mxGeometry x="400" y="40" width="370" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- STEP 1 -->
+        <mxCell id="sensor"
+                value="Sensor collects data"
+                style="rounded=0;whiteSpace=wrap;html=1;
+                       fillColor=#dae8fc;strokeColor=#6c8ebf;
+                       fontSize=15;fontStyle=1;
+                       align=center;verticalAlign=middle"
+                vertex="1" parent="1">
+          <mxGeometry x="80" y="180" width="210" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- STEP 2 -->
+        <mxCell id="gateway"
+                value="Data sent to IoT&#xa;gateway"
+                style="rounded=0;whiteSpace=wrap;html=1;
+                       fillColor=#d5e8d4;strokeColor=#82b366;
+                       fontSize=15;fontStyle=1;
+                       align=center;verticalAlign=middle"
+                vertex="1" parent="1">
+          <mxGeometry x="380" y="180" width="210" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- STEP 3 -->
+        <mxCell id="wifi"
+                value="Data transmitted via&#xa;Wi-Fi to cloud"
+                style="rounded=0;whiteSpace=wrap;html=1;
+                       fillColor=#fff2cc;strokeColor=#d6b656;
+                       fontSize=15;fontStyle=1;
+                       align=center;verticalAlign=middle"
+                vertex="1" parent="1">
+          <mxGeometry x="680" y="180" width="230" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- STEP 4 -->
+        <mxCell id="cloud"
+                value="Data stored,&#xa;Processed and&#xa;Analyzed in cloud"
+                style="rounded=0;whiteSpace=wrap;html=1;
+                       fillColor=#f8cecc;strokeColor=#b85450;
+                       fontSize=15;fontStyle=1;
+                       align=center;verticalAlign=middle"
+                vertex="1" parent="1">
+          <mxGeometry x="680" y="370" width="230" height="100" as="geometry"/>
+        </mxCell>
+
+        <!-- STEP 5 -->
+        <mxCell id="insights"
+                value="Insights &amp; Control&#xa;sent to user &amp; actuators"
+                style="rounded=0;whiteSpace=wrap;html=1;
+                       fillColor=#e1d5e7;strokeColor=#9673a6;
+                       fontSize=15;fontStyle=1;
+                       align=center;verticalAlign=middle"
+                vertex="1" parent="1">
+          <mxGeometry x="300" y="370" width="260" height="100" as="geometry"/>
+        </mxCell>
+
+        <!-- ARROW 1 -->
+        <mxCell id="arrow1"
+                style="edgeStyle=orthogonalEdgeStyle;
+                       rounded=0;orthogonalLoop=1;
+                       jettySize=auto;html=1;
+                       strokeWidth=2;endArrow=block"
+                edge="1" parent="1"
+                source="sensor" target="gateway">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ARROW 2 -->
+        <mxCell id="arrow2"
+                style="edgeStyle=orthogonalEdgeStyle;
+                       rounded=0;orthogonalLoop=1;
+                       jettySize=auto;html=1;
+                       strokeWidth=2;endArrow=block"
+                edge="1" parent="1"
+                source="gateway" target="wifi">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ARROW 3 -->
+        <mxCell id="arrow3"
+                style="edgeStyle=orthogonalEdgeStyle;
+                       rounded=0;orthogonalLoop=1;
+                       jettySize=auto;html=1;
+                       strokeWidth=2;endArrow=block"
+                edge="1" parent="1"
+                source="wifi" target="cloud">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ARROW 4 -->
+        <mxCell id="arrow4"
+                style="edgeStyle=orthogonalEdgeStyle;
+                       rounded=0;orthogonalLoop=1;
+                       jettySize=auto;html=1;
+                       strokeWidth=2;endArrow=block"
+                edge="1" parent="1"
+                source="cloud" target="insights">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
