@@ -1,0 +1,80 @@
+#include <SoftwareSerial.h>
+// HC-05 TXD -> Arduino D10
+// HC-05 RXD -> Arduino D11
+SoftwareSerial bluetooth(10, 11);
+
+// LED connected to Arduino D13
+int led = 13;
+
+void setup() {
+
+  // Set LED pin as OUTPUT
+  pinMode(led, OUTPUT);
+
+  // Arduino Serial Monitor
+  Serial.begin(9600);
+
+  // HC-05 Bluetooth communication
+  bluetooth.begin(9600);
+
+  // Message sent to mobile through HC-05
+  bluetooth.println("Bluetooth Communication Ready");
+}
+
+void loop() {
+
+  // Check whether data is received from HC-05
+  if (bluetooth.available()) {
+
+    // Read the received character
+    char data = bluetooth.read();
+
+    // If mobile sends '1'
+    if (data == '1') {
+
+      // Turn LED ON
+      digitalWrite(led, HIGH);
+
+      // Send response to mobile
+      bluetooth.println("LED ON");
+    }
+
+    // If mobile sends '0'
+    if (data == '0') {
+
+      // Turn LED OFF
+      digitalWrite(led, LOW);
+
+      // Send response to mobile
+      bluetooth.println("LED OFF");
+    }
+  }
+}
+
+
+/*
+  =====================================================
+  BLUETOOTH COMMUNICATION USING HC-05
+  Arduino UNO + HC-05 + LED
+  =====================================================
+
+  CONNECTIONS:
+
+  HC-05          Arduino UNO
+  --------------------------------
+  VCC      --->   5V
+  GND      --->   GND
+  TXD      --->   D10
+  RXD      --->   D11
+
+  LED CONNECTION:
+
+  Arduino D13 ---> 220 ohm resistor ---> LED Anode (+)
+  LED Cathode (-) --------------------> GND
+
+  MOBILE COMMANDS:
+
+  Send '1' ---> LED ON
+  Send '0' ---> LED OFF
+  =====================================================
+*/
