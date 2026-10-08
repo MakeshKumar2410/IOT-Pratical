@@ -119,3 +119,33 @@ Step to do this program:
 //
 // For a bare DHT11 sensor (not a module):
 // Connect a 10 kΩ resistor between DHT11 VCC and DHT11 DATA.
+
+
+
+
+temperature = [28, 29, 30, 31, 32]
+humidity = [60, 62, 65, 68, 70]
+
+avg_temperature = sum(temperature) / len(temperature)
+avg_humidity = sum(humidity) / len(humidity)
+
+max_temperature = max(temperature)
+min_temperature = min(temperature)
+
+print("Sensor Data Processing")
+print("----------------------")
+print("Temperature:", temperature)
+print("Humidity:", humidity)
+print("Average Temperature:", avg_temperature, "°C")
+print("Average Humidity:", avg_humidity, "%")
+print("Maximum Temperature:", max_temperature, "°C")
+print("Minimum Temperature:", min_temperature, "°C")
+
+if avg_temperature > 30:
+    print("Status: High Temperature")
+else:
+    print("Status: Normal Temperature")
+
+VCC 5V 
+DATA D2 
+GND GND 
